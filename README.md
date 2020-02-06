@@ -1,41 +1,23 @@
-# fbcrawl
-Fbcrawl is an advanced crawler for Facebook, written in python, based on the [Scrapy](https://scrapy.org/) framework. 
+# fbcrawler
 
-# UNMAINTAINED
-For an undefined period I will be unable to review issues, fix bugs and merge pull requests. As I have been the sole contributor to the project, it's likely that the code will remain frozen at the current stage. 
+Project phát triển dựa trên [https://github.com/rugantio/fbcrawl](https://github.com/rugantio/fbcrawl)
 
-Anybody who is skilled enough and willing to partecipate, may open a dedicated issue or contact at my email address: rugantio AT gmail DOT com
+## Môi trường
 
-I will be back, but in the meantime I'd appreciate if this becomes a community project.
+Yêu cầu cài đặt
+- **python3**
+- **scrapy**: ```pip install scrapy```
 
-## DONATIONS
-Fbcrawl is free software. It is not "free as beer" nor "free as speech", it is "free as a toilet": it is always available and working, but someone as to keep it clean and tidy, and I am the only one at the moment, it is not a community project. Please consider make a donation, it will keep this project alive and if I see actual interest from people I will get on with the [TODO](https://github.com/rugantio/fbcrawl/blob/master/README.md#TODO) list. One of the my long-term goal is to refactor the framework with a gui, connections to databases and graph vizualitations. These tasks would take at least a couple of months of work, and I will be able to afford them only with your support! Thank you :)
+# Tính năng
 
-[![paypal](https://www.paypalobjects.com/en_US/IT/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=G96T8U8W7UZDL&currency_code=EUR&source=url)
+Công cụ crawl dữ liệu từ trang tối giản cho di động [https://mbasic.facebook.com](https://mbasic.facebook.com) thay vì trang [https://facebook.com](https://facebook.com) để giảm thiểu việc xử lý các thao tác render từ phía client sử dụng javascript.
 
-## DISCLAIMER
-This software is not authorized by Facebook and doesn't follow Facebook's [robots.txt](https://www.facebook.com/robots.txt). Scraping without Facebook explicit written is a violation of the [terms and conditions on scraping](http://www.facebook.com/apps/site_scraping_tos_terms.php) and can potentially cause a [lawsuit](https://petewarden.com/2010/04/05/how-i-got-sued-by-facebook/)
-
-This software is provided as is, for educational purposes, to show how a crawler can be made to recursively parse a facebook page. Use at your own risk.
-
-# Introduction
+**Note:** Có thể sử dụng spash thay thế.
 
 <div style="text-align:center">
 <img src="./trump.png" alt="Donald Trump" width="1080">
 </div>
 
-EDIT: fbcrawl can now crawl comments! check out the "how to crawl comments" section!
-
-What features can fbcrawl obtain? Everything that you see in the table is crawled by default. I decided to simplify the timestamp feature, leaving out the hour and to ignore comments and commentators, which are going to be parsed post-by-post by another crawler.
-
-Fbcrawl makes use of an static mobile version of facebook, unknown to many: [https://mbasic.facebook.com](https://mbasic.facebook.com) because it's all plain HTML and we can navigate easily through the pages without having to emulate a browser or inject javascript code.
-
-## Installation
-Requirements are: **python3** (python2 is also supported) and the  **scrapy** framework, that should pull other needed libs as dependencies (twisted, libxml2 etc.).
-
-Scrapy can be installed through the package manager of the distribution (in my arch box is simply called "scrapy") or through internal python package system, typing:
-
- ```pip install scrapy```
 
 ## Architecture
 The way scrapy works is through an engine that manages granularly every step of the crawling process.

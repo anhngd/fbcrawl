@@ -127,6 +127,9 @@ class FacebookSpider(scrapy.Spider):
             elif response.xpath("//input[@placeholder='Pesquisa no Facebook']"):
                 self.logger.info('Language recognized: lang="pt"')
                 self.lang = 'pt'
+            elif response.xpath("//input[@placeholder='Tìm kiếm trên Facebook']"):
+                self.logger.info('Language recognized: lang="vi"')
+                self.lang = 'vi'
             else:
                 raise AttributeError('Language not recognized\n'
                                      'Change your interface lang from facebook ' 
