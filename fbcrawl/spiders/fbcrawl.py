@@ -60,13 +60,13 @@ class FacebookSpider(scrapy.Spider):
         if 'lang' not in kwargs:
             self.logger.info('Language attribute not provided, fbcrawl will try to guess it from the fb interface')
             self.logger.info('To specify, add the lang parameter: scrapy fb -a lang="LANGUAGE"')
-            self.logger.info('Currently choices for "LANGUAGE" are: "en", "es", "fr", "it", "pt"')
+            self.logger.info('Currently choices for "LANGUAGE" are: "en", "es", "fr", "it", "pt", "vi"')
             self.lang = '_'                       
-        elif self.lang == 'en'  or self.lang == 'es' or self.lang == 'fr' or self.lang == 'it' or self.lang == 'pt':
+        elif self.lang == 'en'  or self.lang == 'es' or self.lang == 'fr' or self.lang == 'it' or self.lang == 'pt' or self.lang == 'vi':
             self.logger.info('Language attribute recognized, using "{}" for the facebook interface'.format(self.lang))
         else:
             self.logger.info('Lang "{}" not currently supported'.format(self.lang))                             
-            self.logger.info('Currently supported languages are: "en", "es", "fr", "it", "pt"')                             
+            self.logger.info('Currently supported languages are: "en", "es", "fr", "it", "pt", "vi"')                             
             self.logger.info('Change your interface lang from facebook settings and try again')
             raise AttributeError('Language provided not currently supported')
         
